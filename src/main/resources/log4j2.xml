@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="off">
+    <!-- Log file directories and compressed files-->
+    <Properties>
+        <Property name="fileName">/home/fullstack/log/spring_log</Property>
+        <Property name="fileGz">/home/fullstack/log/spring_log/7z</Property>
+    </Properties>
+    <Appenders>
+        <!--Configuration of this output console -->
+        <Console name="console" target="SYSTEM_OUT">
+            <!--Console only outputs level and above level information(onMatch), other direct reject(onMismatch）-->
+            <!--   <Filters>
+               <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="NEUTRAL" />
+               <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="NEUTRAL" />
+               </Filters>-->
+            <!--The format of the output log -->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} %L %M - %msg%xEx%n"/>
+        </Console>
+
+        <!--This will print out all the information, each time The size exceeds the size, The size of the size of the log is automatically stored in the folder by year-month established below and compressed, as an archive -->
+        <RollingRandomAccessFile name="rollingInfoFile" fileName="${fileName}/web-info.log" immediateFlush="false"
+                                 filePattern="${fileGz}/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.web-info.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} [%t] %-5level %logger{36} %L %M - %msg%xEx%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="6" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="50 MB"/>
+            </Policies>
+            <Filters>
+                <!-- Only info level information is logged -->
+                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <!-- Specifies the maximum number of zips per day, the default is 7, more than would be covered before.-->
+            <DefaultRolloverStrategy max="50"/>
+        </RollingRandomAccessFile>
+
+
+        <RollingRandomAccessFile name="rollingErrorFile" fileName="${fileName}web-error.log" immediateFlush="false"
+                                 filePattern="${fileGz}/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.web-error.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} [%t] %-5level %logger{36} %L %M - %msg%xEx%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="6" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="50 MB"/>
+            </Policies>
+            <Filters>
+                <!-- 只记录error级别信息 -->
+                <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <!-- 指定每天的最大压缩包个数，默认7个，超过了会覆盖之前的 -->
+            <DefaultRolloverStrategy max="50"/>
+        </RollingRandomAccessFile>
+
+    </Appenders>
+
+    <Loggers>
+        <!-- 全局配置，默认所有的Logger都继承此配置 -->
+        <AsyncRoot level="info" additivity="false">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="rollingInfoFile"/>
+            <AppenderRef ref="rollingErrorFile"/>
+        </AsyncRoot>
+
+        <!-- 将业务dao接口所在包填写进去,并用控制台输出即可 -->
+        <logger name="me.zbl.fullstack.mapper" level="DEBUG" additivity="false">
+            <appender-ref ref="console"/>
+        </logger>
+    </Loggers>
+</Configuration>

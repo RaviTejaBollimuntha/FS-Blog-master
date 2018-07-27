@@ -1,0 +1,54 @@
+<ehcache>
+<!-- Disk storage configuration: used to specify the storage location of the cache on the disk.
+    You can use the JavaVM environment variable (user.home, user.dir, java. io. tmpdir)-->
+    <diskStore path = "/home / fullstack/ehcache" />
+    <!-- <diskStore path = "/ home / smart / cache" / >-->
+    <!-- Default cache configuration, the following properties are required：
+    name: the identifier of the cache must be unique in a CacheManager.
+    maxElementsInMemory: maximum number of elements cached in memory.
+    maxElementsOnDisk: maximum number of elements cached on disk.
+    eternal: sets whether the cached elements are valid.If true, the timeouts property is ignored.
+    overflowToDisk: sets whether or not the expired element is cached on disk when the memory cache is overflowed.
+    The following properties are optional：
+    timeToIdleSeconds: the idle time of the cached element before it expires.
+    timeToLiveSeconds: the lifetime of the cached element.
+    diskPersistent: whether to persist the disk cache when the VM is restarted, the default is false.
+    diskExpiryThreadIntervalSeconds: the cleanup interval for the disk cache is 120 seconds by default.
+    memoryStoreEvictionPolicy: when the memory cache reaches the maximum, a new element is added，
+    Removes the policy of the element in the cache.The default is LRU, optionally with LFU and FIFO
+    Cache child elements：
+    cacheEventListenerFactory: register the corresponding cache listener class for handling cached events such as put,remove, update, and expire
+    bootstrapCacheLoaderFactory: specifies the appropriate BootstrapCacheLoader that is used to initialize the cache, as well as auto-settings.
+    -->
+    <defaultCache
+            maxElementsInMemory="100"
+            maxElementsOnDisk="1000"
+            timeToLiveSeconds="600"
+            overflowToDisk="false"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="1800"
+            memoryStoreEvictionPolicy="FIFO"
+    />
+    <!--cache配置同defaultCache -->
+    <cache name="profileOfInfo"
+           maxElementsInMemory="1"
+    />
+    <cache name="resumeView"
+           maxElementsInMemory="1"
+    />
+    <cache name="archives"
+           maxElementsInMemory="1"
+    />
+    <cache name="tagList"
+           maxElementsInMemory="1"
+    />
+    <cache name="projects"
+           maxElementsInMemory="1"
+    />
+    <cache name="projectPageNum"
+           maxElementsInMemory="1"
+    />
+    <cache name="archivePageNum"
+           maxElementsInMemory="1"
+    />
+</ehcache>
