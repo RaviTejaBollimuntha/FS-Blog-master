@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <#-- Blog bulk management -->
 <head>
 
@@ -78,7 +78,7 @@
 </div>
 
 <!-- jQuery -->
-<script src="../vendor/admin/jquery/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../vendor/admin/bootstrap/js/bootstrap.min.js"></script>
@@ -94,7 +94,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
 
 <!-- Latest compiled and minified Locales -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
 
 <#-- Custom js -->
 <script src="../js/b_blog_manage.js"></script>

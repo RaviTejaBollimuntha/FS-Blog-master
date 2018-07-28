@@ -29,7 +29,7 @@
             diskExpiryThreadIntervalSeconds="1800"
             memoryStoreEvictionPolicy="FIFO"
     />
-    <!--cache配置同defaultCache -->
+    <!--cache configuration with defaultCache -->
     <cache name="profileOfInfo"
            maxElementsInMemory="1"
     />

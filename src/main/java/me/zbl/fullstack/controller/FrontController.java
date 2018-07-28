@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 前台页面控制器
+ * Foreground page Controller
  *
- * @author James
+ * @author raviteja
  */
 @Controller
 public class FrontController extends BaseController {
@@ -22,7 +22,7 @@ public class FrontController extends BaseController {
   private IAdminBlogService mBlogService;
 
   /**
-   * 错误页
+   * Error page
    */
   @GetMapping("/error")
   public String pErrorPage(HttpServletRequest request, Model model) {
@@ -30,16 +30,17 @@ public class FrontController extends BaseController {
   }
 
   /**
-   * 前台首页
-   * GET
+   * Front desk home
+   * GET * 
    */
+
   @GetMapping("/index")
   public String pFrontIndex(HttpServletRequest request, Model model) {
     return "index";
   }
 
   /**
-   * 前台首页
+   * Front desk home
    * POST
    */
   @PostMapping("/index")
@@ -48,7 +49,7 @@ public class FrontController extends BaseController {
   }
 
   /**
-   * 前台用户登录页
+   * Foreground user login page
    */
   @GetMapping("/userlogin")
   public String pFrontUserLogin(HttpServletRequest request, Model model) {
@@ -56,7 +57,7 @@ public class FrontController extends BaseController {
   }
 
   /**
-   * 前台用户注册
+   * Foreground user registration
    */
   @GetMapping("/userregister")
   public String pFrontUserRegister(HttpServletRequest request, Model model) {

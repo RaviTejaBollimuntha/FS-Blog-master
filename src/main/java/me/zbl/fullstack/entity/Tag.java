@@ -4,9 +4,9 @@ import java.util.Date;
 import javax.persistence.*;
 
 /**
- * 文章标签类
+ * Article tag class
  *
- * @author James
+ * @author raviteja
  */
 public class Tag {
 

@@ -7,9 +7,9 @@ import lombok.Setter;
 import me.zbl.fullstack.entity.Tag;
 
 /**
- * 文章标签视图
+ * Article tag view
  *
- * @author James
+ * @author raviteja
  */
 @Getter
 @Setter

@@ -3,21 +3,22 @@ package me.zbl.fullstack.service.base;
 import java.util.List;
 
 /**
- * 通用包含视图转换功能的业务抽象类
+ * Generic business abstract classes that contain view conversion functionality
  *
- * @param <E> 数据查询结果实体类
- * @param <V> 视图类
+ * @param < E> data query results entity class
+ * @param < V> view class
  *
- * @author James
+ * @author raviteja
  */
 public abstract class BaseViewTransableService<E, V> {
 
   /**
-   * 将数据实体类对象转换为视图类对象
+   * Convert a data entity class object to a view class object
    *
-   * @param entityList 数据实体类对象集合
+   * @param entityList data entity class object collection
    *
-   * @return 视图模型类对象集合
+   * @return view model class object collection
    */
+
   protected abstract List<V> transEntityToView(List<E> entityList);
 }

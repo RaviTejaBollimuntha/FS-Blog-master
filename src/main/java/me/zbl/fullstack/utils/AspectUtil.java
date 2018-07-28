@@ -8,33 +8,33 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
 /**
- * 切面操作工具
+ * Section operation tool
  *
- * @author James
+ * @author raviteja bollimuntha
  */
 public class AspectUtil {
 
   /**
-   * 获取连接点的制定类型的注解
+   * Get a comment on the type of connection point
    *
-   * @param joinPoint 连接点
-   * @param clazz     注解类
+   * @param joinPoint Connection point
+   * @param clazz     Annotation classes
    *
-   * @return 注解
+   * @return Comments
    */
   public static Annotation getAnnotation(ProceedingJoinPoint joinPoint, Class clazz) {
     try {
-      // 拦截的对象
+      // Intercepted object
       Object object = joinPoint.getTarget();
       Signature signature = joinPoint.getSignature();
-      // 拦截方法名
+      // Intercept method name
       String methodName = signature.getName();
       Class[] parameterTypes = ((MethodSignature) signature).getMethod().getParameterTypes();
 
       try {
-        // 反射目标方法
+        //  reflection target method
         Method method = object.getClass().getDeclaredMethod(methodName, parameterTypes);
-        // 获取注解
+        // Get annotations
         return method.getDeclaredAnnotation(clazz);
       } catch (NoSuchMethodException e) {
         e.printStackTrace();

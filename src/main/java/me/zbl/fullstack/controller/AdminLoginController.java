@@ -16,9 +16,9 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * 后台登录控制器
+ * Background login Controller
  *
- * @author James
+ * @author raviteja
  */
 @Controller
 public class AdminLoginController extends BaseController {
@@ -27,7 +27,7 @@ public class AdminLoginController extends BaseController {
   private IAdminUserService mAdminService;
 
   /**
-   * 后台用户登录页面
+   * Background user login page
    */
   @GetMapping("/adminlogin")
   public String pAdminLogin() {
@@ -35,15 +35,15 @@ public class AdminLoginController extends BaseController {
   }
 
   /**
-   * 后台用户登录页面
+   * Background user login page
    */
   @GetMapping("/adminlogin/index")
   public String pAdminLoginIndex() {
     return "admin/userlogin";
   }
 
-  /**
-   * 后台用户登录验证
+ /**
+   * Background user login verification
    */
   @PostMapping("/adminlogin/login.f")
   public String fAdminLogin(@Valid UserLoginForm userLoginForm, BindingResult bindingResult, HttpServletRequest request) {
@@ -56,6 +56,6 @@ public class AdminLoginController extends BaseController {
       mAdminService.joinSession(request, user);
       return "redirect:/admin/index";
     }
-    return "redirect:/adminlogin?msg=登录失败";
+    return "redirect:/adminlogin?msg=Login failed";
   }
 }

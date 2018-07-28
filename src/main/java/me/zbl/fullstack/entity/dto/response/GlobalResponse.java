@@ -4,9 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 统一 Json 范围实体类
+ * Unify Json-scoped entity classes
  *
- * @author James
+ * @author raviteja
  */
 @Getter
 @Setter

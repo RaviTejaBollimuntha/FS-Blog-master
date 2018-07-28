@@ -4,9 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 登录返回 Json
+ * Login returns Json
  *
- * @author James
+ * @author raviteja
  */
 @Setter
 @Getter

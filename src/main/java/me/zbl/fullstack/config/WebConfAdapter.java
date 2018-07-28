@@ -17,9 +17,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * WEB MVC 配置
+ * WEB MVC configuration
  *
- * @author James
+ * @author raviteja
  */
 @Configuration
 public class WebConfAdapter extends WebMvcConfigurerAdapter {
@@ -34,7 +34,7 @@ public class WebConfAdapter extends WebMvcConfigurerAdapter {
 
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
-    //后台登录拦截器拦截路径
+    //Background login interceptor to intercept the path
     registry.addInterceptor(securityInterceptor)
             .addPathPatterns("/admin/**")
             .excludePathPatterns("/adminlogin/**");
@@ -43,13 +43,13 @@ public class WebConfAdapter extends WebMvcConfigurerAdapter {
   @Override
   public void addViewControllers(ViewControllerRegistry registry) {
     super.addViewControllers(registry);
-    //主页
+    //Home page
     registry.addViewController("/").setViewName("forward:/index");
   }
 
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    //配置静态资源路径
+    // Configure static resource paths
     registry.addResourceHandler("/**").addResourceLocations("classpath:static/");
   }
 
@@ -84,7 +84,7 @@ public class WebConfAdapter extends WebMvcConfigurerAdapter {
 
   @Bean
   public HttpMessageConverter<String> responseBodyConverter() {
-    //编码
+   // Coding
     return new StringHttpMessageConverter(Charset.forName("UTF-8"));
   }
 

@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 /**
- * 配置 Hibernate Validator
+ * Configuring Hibernate Validator
  *
- * @author James
+ * @author raviteja
  */
 @Configuration
 public class ValidatorConfig {

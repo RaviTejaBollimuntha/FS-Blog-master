@@ -1,9 +1,3 @@
-<p align= "center">
-    <a href="http://fsblog oh, my God.letec.top">
-        <img width= " 200 "src=" screenshots/logo.png">
-    </a>
-</p>
-
 # FS-Blog
 
 ## Personal blog based on Spring Boot

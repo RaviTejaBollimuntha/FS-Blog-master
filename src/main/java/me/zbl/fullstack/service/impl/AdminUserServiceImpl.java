@@ -18,9 +18,9 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- * 后台用户服务实现类
+ * Background user service implementation class
  *
- * @author James
+ * @author raviteja
  */
 @Service
 public class AdminUserServiceImpl implements IAdminUserService {
@@ -70,18 +70,18 @@ public class AdminUserServiceImpl implements IAdminUserService {
     String newPwd = form.getNewPwd();
     String confirmPwd = form.getConfirmPwd();
     if (!StringUtils.equals(newPwd, confirmPwd)) {
-      // 两次密码不相同
+      // Two different passwords.
       return ModifyPwdResult.NOT_EQUAL;
     }
     AdminUser user = (AdminUser) request.getSession().getAttribute(SessionConstants.SESSION_ADMIN_CURRENT_USER);
-    // 密码是否正确
+    // Is the password correct?
     if (StringUtils.equals(DigestUtils.md5Hex(oriPwd), user.getPassword())) {
       user.setPassword(DigestUtils.md5Hex(newPwd));
-      // 更新密码
+      // Update password
       mAdminUserMapper.updateByPrimaryKeySelective(user);
       return ModifyPwdResult.SUCCESS;
     } else {
-      // 原密码错误
+      // Original password error
       return ModifyPwdResult.ORI_PWD_ERROR;
     }
   }

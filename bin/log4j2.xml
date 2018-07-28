@@ -2,8 +2,8 @@
 <Configuration status="off">
     <!-- Log file directories and compressed files-->
     <Properties>
-        <Property name="fileName">/home/fullstack/log/spring_log</Property>
-        <Property name="fileGz">/home/fullstack/log/spring_log/7z</Property>
+        <Property name="fileName">./logs/spring_log</Property>
+        <Property name="fileGz">./logs/spring_log/7z</Property>
     </Properties>
     <Appenders>
         <!--Configuration of this output console -->
@@ -43,24 +43,24 @@
                 <SizeBasedTriggeringPolicy size="50 MB"/>
             </Policies>
             <Filters>
-                <!-- 只记录error级别信息 -->
+                <!-- Record only error level information -->
                 <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
             </Filters>
-            <!-- 指定每天的最大压缩包个数，默认7个，超过了会覆盖之前的 -->
+            <!-- Specify the maximum number of compressed packets per day, the default 7, more than will be covered before the -->
             <DefaultRolloverStrategy max="50"/>
         </RollingRandomAccessFile>
 
     </Appenders>
 
     <Loggers>
-        <!-- 全局配置，默认所有的Logger都继承此配置 -->
+        <!-- The global configuration, which is inherited by default by all loggers -->
         <AsyncRoot level="info" additivity="false">
             <AppenderRef ref="console"/>
             <AppenderRef ref="rollingInfoFile"/>
             <AppenderRef ref="rollingErrorFile"/>
         </AsyncRoot>
 
-        <!-- 将业务dao接口所在包填写进去,并用控制台输出即可 -->
+        <!-- The business dao interface where the package to fill in, and can use the console output-->
         <logger name="me.zbl.fullstack.mapper" level="DEBUG" additivity="false">
             <appender-ref ref="console"/>
         </logger>

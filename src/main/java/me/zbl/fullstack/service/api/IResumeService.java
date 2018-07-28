@@ -20,22 +20,22 @@ import me.zbl.fullstack.entity.Resume;
 import me.zbl.fullstack.entity.dto.form.ResumeModifyForm;
 
 /**
- * 简历业务接口
+ * Resume business interface
  *
- * @author JamesZBL
+ * @author raviteja
  * @date 2018-03-28
  */
 public interface IResumeService {
 
   /**
-   * 查询简历
+   * Enquiry resume
    */
   Resume getResume();
 
-  /**
-   * 更新简历
+ /**
+   * Update resume
    *
-   * @param form 表单
+   * @param form
    */
   void updateResume(ResumeModifyForm form, Resume resume);
 }

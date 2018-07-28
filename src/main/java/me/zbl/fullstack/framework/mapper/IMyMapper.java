@@ -8,12 +8,12 @@ import tk.mybatis.mapper.common.ids.DeleteByIdsMapper;
 import tk.mybatis.mapper.common.ids.SelectByIdsMapper;
 
 /**
- * Mapper 基础接口
- * 其他 Mapper 接口需集成本接口
+ * Mapper Basic Interface
+ * Other Mapper interfaces need to integrate this interface
  *
- * @param <T> 实体类型
- * @author James
- * 此接口不能被扫描到，否则出错
+ * @param <T> entity type
+ * @author raviteja
+ * This interface cannot be scanned, otherwise an error occurs
  */
 public interface IMyMapper<T> extends
         Mapper<T>,

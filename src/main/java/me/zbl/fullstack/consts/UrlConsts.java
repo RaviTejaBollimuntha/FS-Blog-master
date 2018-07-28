@@ -1,9 +1,9 @@
 package me.zbl.fullstack.consts;
 
 /**
- * URL 常量
+ * URL Constants
  *
- * @author James
+ * @author raviteja
  */
 public class UrlConsts {
 

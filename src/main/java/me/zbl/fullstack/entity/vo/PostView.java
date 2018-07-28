@@ -7,9 +7,9 @@ import me.zbl.fullstack.entity.Article;
 import org.apache.commons.lang3.time.DateFormatUtils;
 
 /**
- * 博客列表视图
+ * Blog list view
  *
- * @author James
+ * @author raviteja
  */
 @Getter
 @Setter
@@ -23,9 +23,9 @@ public class PostView {
   private String htmlMaterial;
 
   /**
-   * 拷贝构造方法
+   *  constructor
    *
-   * @param article 文章
+   * @param article
    */
   public PostView(Article article) {
     id = article.getId();

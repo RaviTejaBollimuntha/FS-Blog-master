@@ -5,16 +5,16 @@ import me.zbl.fullstack.entity.vo.TagView;
 import java.util.List;
 
 /**
- * 文章标签相关业务接口
+ * Article label related business interfaces
  *
- * @author James
+ * @author ravi teja
  */
 public interface ITagService {
 
   /**
-   * 获取所有 Tag 视图
+   * Get all Tag views
    *
-   * @return Tag 视图
+   * @return Tag view
    */
   List<TagView> getAllTagView();
 }

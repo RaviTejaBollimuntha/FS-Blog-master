@@ -6,100 +6,100 @@ import tk.mybatis.mapper.entity.Condition;
 import java.util.List;
 
 /**
- * Service 基础接口
- * 其他 Service 接口需继承自本接口
+ * Service Basic Interface
+ * Other Service Interfaces need to be inherited from this interface
  *
- * @param <T> 实体类型
+ * @param <T> entity type
  *
- * @author James
+ * @author raviteja
  */
 public interface IService<T> {
 
   /**
-   * 插入
+   * Insert
    *
-   * @param model 模型
+   * @param model
    */
   void save(T model);
 
   /**
-   * 批量插入
+   * BULK INSERT
    *
-   * @param models 模型
+   * @param models
    */
   void save(List<T> models);
 
   /**
-   * 通过主鍵刪除
+   * Removed by primary key
    *
-   * @param id 主键
+   * @param id primary key
    */
   void deleteById(Integer id);
 
   /**
-   * 批量删除
+   * Bulk delete
    *
-   * @param ids 例如 “ 1,2,3,4 “
+   * @param ids e.g. " 1,2,3,4 “
    */
   void deleteByIds(String ids);
 
   /**
-   * 更新
+   * Update
    *
-   * @param model 模型
+   * @param model
    */
   void update(T model);
 
   /**
-   * 通过 id 查找
+   * Find by id
    *
    * @param id id
    *
-   * @return 实体
+   * @return entity
    */
   T findById(Integer id);
 
   /**
-   * 通过某个成员属性查找,value 需符合 unique 约束
+   * Lookup through a member property, value is subject to a unique constraint
    *
-   * @param property 属性名
-   * @param value    属性值
+   * @param property property name
+   * @param value property value
    *
-   * @return 实体
+   * @return entity
    *
-   * @throws TooManyResultsException 结果集过大
+   * @throws TooManyResultsException result set too large
    */
   T findBy(String property, Object value) throws TooManyResultsException;
 
   /**
-   * 通过多个ID查找//eg：ids -> “1,2,3,4”
+   * Find by multiple IDs//eg: ids - > " 1,2,3,4”
    *
    * @param ids ids
    *
-   * @return 实体集合
+   * @return entity collection
    */
   List<T> findByIds(String ids);
 
   /**
-   * 根据条件查找
+   * Find by condition
    *
-   * @param condition 条件
+   * @param condition
    *
-   * @return 实体集合
+   * @return entity collection
    */
   List<T> findByCondition(Condition condition);
 
   /**
-   * 获取所有
+   * Get all
    *
-   * @return 实体集合
+   * @return entity collection
    */
   List<T> findAll();
 
   /**
-   * 创建条件
+   * Create conditions
    *
-   * @return 条件
+   * @return condition
    */
   Condition createCondition();
 }

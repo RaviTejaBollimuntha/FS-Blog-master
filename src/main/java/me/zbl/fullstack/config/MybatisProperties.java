@@ -7,7 +7,7 @@ import org.springframework.core.io.Resource;
 /**
  * Configuration properties for Mybatis.
  *
- * @author Eddú Meléndez
+ * @author raviteja
  */
 @ConfigurationProperties(prefix = MybatisProperties.MYBATIS_PREFIX)
 public class MybatisProperties {

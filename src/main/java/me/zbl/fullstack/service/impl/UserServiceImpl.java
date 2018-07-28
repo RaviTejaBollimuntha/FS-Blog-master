@@ -15,9 +15,9 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- * 用户信息操作业务实现类
+ * User information operation business implementation class
  *
- * @author James
+ * @author raviteja
  */
 @Service
 public class UserServiceImpl implements IUserService {

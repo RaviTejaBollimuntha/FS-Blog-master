@@ -4,9 +4,9 @@ import java.util.Date;
 import javax.persistence.*;
 
 /**
- * 普通用户类
+ * Common user classes
  *
- * @author James
+ * @author raviteja
  */
 public class User {
 
@@ -18,7 +18,7 @@ public class User {
   private Integer id;
 
   /**
-   * 用户名
+   * Username
    */
   private String username;
 
@@ -38,17 +38,17 @@ public class User {
   private String wecaht;
 
   /**
-   * 头像url
+   * avatar url
    */
   private String avatar;
 
   /**
-   * 状态/0:正常/1:封禁
+   * Status/0: normal/1: ban
    */
   private Integer status;
 
   /**
-   * 等级
+   * Level
    */
   private Integer level;
 
@@ -66,7 +66,7 @@ public class User {
   private String mdInfo;
 
   /**
-   * 获取PrimaryKey
+   *  getting PrimaryKey
    *
    * @return id - PrimaryKey
    */
@@ -75,7 +75,7 @@ public class User {
   }
 
   /**
-   * 设置PrimaryKey
+   * setting PrimaryKey
    *
    * @param id PrimaryKey
    */
@@ -84,18 +84,18 @@ public class User {
   }
 
   /**
-   * 获取用户名
+   * Get username
    *
-   * @return username - 用户名
+   * @return username-username
    */
   public String getUsername() {
     return username;
   }
 
   /**
-   * 设置用户名
+   * Set user name
    *
-   * @param username 用户名
+   * @param username
    */
   public User setUsername(String username) {
     this.username = username == null ? null : username.trim();
@@ -202,54 +202,54 @@ public class User {
   }
 
   /**
-   * 获取头像url
+   * Get avatar url
    *
-   * @return avatar - 头像url
+   * @return avatar-avatar url
    */
   public String getAvatar() {
     return avatar;
   }
 
   /**
-   * 设置头像url
+   * Set avatar url
    *
-   * @param avatar 头像url
+   * @param avatar URL
    */
   public void setAvatar(String avatar) {
     this.avatar = avatar == null ? null : avatar.trim();
   }
 
   /**
-   * 获取状态/0:正常/1:封禁
+   *  get status / 0:normal / 1: ban
    *
-   * @return status - 状态/0:正常/1:封禁
+   * @return status-status/0: normal/1: blocked
    */
   public Integer getStatus() {
     return status;
   }
 
   /**
-   * 设置状态/0:正常/1:封禁
+   * Set status/0: normal/1: ban
    *
-   * @param status 状态/0:正常/1:封禁
+   * @param status/0: normal/1: blocked
    */
   public void setStatus(Integer status) {
     this.status = status;
   }
 
   /**
-   * 获取等级
+   * Get rank
    *
-   * @return level - 等级
+   * @return level-level
    */
   public Integer getLevel() {
     return level;
   }
 
   /**
-   * 设置等级
+   * Set level
    *
-   * @param level 等级
+   * @param level
    */
   public void setLevel(Integer level) {
     this.level = level;

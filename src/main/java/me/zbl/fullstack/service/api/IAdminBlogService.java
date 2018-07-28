@@ -9,46 +9,46 @@ import me.zbl.fullstack.entity.dto.form.BlogModifyForm;
 import java.util.List;
 
 /**
- * 后台博客发布接口
+ * Backend blog post interface
  *
- * @author James
+ * @author ravi teja
  */
 public interface IAdminBlogService {
 
   /**
-   * 添加 文章
+   * Add articles
    *
-   * @param form 表单
+   * @param form
    */
   void blogAdd(BlogAddForm form);
 
   /**
-   * 根据 id 获取文章
+   * Get articles by id
    *
    * @param id id
    *
-   * @return 文章实体
+   * @return article entity
    */
   Article blogSelectByPrimaryKey(Integer id);
 
   /**
-   * 获取所有文章列表
+   * Get a list of all articles
    *
-   * @return 文章列表视图实体集合
+   * @return article List View entity collection
    */
   List<ArticleDataGridView> getArticleList();
 
   /**
-   * 根据 id 删除文章
+   * Delete articles based on id
    *
-   * @param model 数据模型
+   * @param model data model
    */
   void blogDelete(TableKeyModel model);
 
   /**
-   * 修改已发布文章
+   * Modify published articles
    *
-   * @param form 表单
+   * @param form
    */
   void blogModify(BlogModifyForm form);
 }

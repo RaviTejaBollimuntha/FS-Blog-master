@@ -30,8 +30,8 @@ import javax.annotation.PostConstruct;
  * will attempt to register mappers based on the interface definitions in or under the
  * root auto-configuration package.
  *
- * @author Eddú Meléndez
- * @author Josh Long
+ * 
+ * @author raviteja
  */
 @Configuration
 @ConditionalOnClass({ SqlSessionFactory.class, SqlSessionFactoryBean.class })
@@ -89,16 +89,16 @@ public class MybatisAutoConfiguration {
     }
 
 //    /**
-//     * 分页插件
-//     *
-//     * @param dataSource
-//     * @return
-//     * @author SHANHY
-//     * @create  2016年2月18日
+// * Pagination plugin
+// *
+// * @param dataSource
+// * @return
+// * @author SHANHY
+// * @create February 18, 2016
 //     */
 //    @Bean
 //    public PageHelper pageHelper(DataSource dataSource) {
-//        log.info("注册MyBatis分页插件PageHelper");
+//        log.info("Register MyBatis pagination plugin PageHelper");
 //        PageHelper pageHelper = new PageHelper();
 //        Properties p = new Properties();
 //        p.setProperty("offsetAsPageNum", "true");

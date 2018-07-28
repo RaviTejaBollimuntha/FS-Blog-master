@@ -15,9 +15,9 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * 博客业务实现类
+ * Blog business implementation class
  *
- * @author James
+ * @author raviteja
  */
 @Service
 public class PostServiceImpl extends BaseViewTransableService<Article, PostView> implements IPostsService {

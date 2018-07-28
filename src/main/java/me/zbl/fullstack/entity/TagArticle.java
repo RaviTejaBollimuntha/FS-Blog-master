@@ -4,9 +4,9 @@ import java.util.Date;
 import javax.persistence.*;
 
 /**
- * 文章标签和文章关联的表
+ * Table of Article tags and Article associations
  *
- * @author James
+ * @author raviteja
  */
 @Table(name = "tag_article")
 public class TagArticle {
@@ -48,7 +48,7 @@ public class TagArticle {
   }
 
   /**
-   * 获取Tag_ID
+   * getting Tag_ID
    *
    * @return tag_id - Tag_ID
    */
@@ -57,7 +57,7 @@ public class TagArticle {
   }
 
   /**
-   * 设置Tag_ID
+   * setting Tag_ID
    *
    * @param tagId Tag_ID
    */
@@ -66,7 +66,7 @@ public class TagArticle {
   }
 
   /**
-   * 获取Article_ID
+   * setting Article_ID
    *
    * @return article_id - Article_ID
    */
@@ -75,7 +75,7 @@ public class TagArticle {
   }
 
   /**
-   * 设置Article_ID
+   * getting Article_ID
    *
    * @param articleId Article_ID
    */

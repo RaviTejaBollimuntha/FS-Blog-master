@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * 全局常量处理器
+ * Global constant processor
  *
- * @author James
+ * @author raviteja
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {

@@ -20,9 +20,9 @@ import java.util.List;
 import static me.zbl.fullstack.consts.ViewConsts.VIEW_MSG;
 
 /**
- * 用户登录控制器
+ * User login Controller
  *
- * @author James
+ * @author raviteja
  */
 @Controller
 public class UserController extends BaseController {
@@ -31,8 +31,8 @@ public class UserController extends BaseController {
   private IUserService mUserService;
 
   /**
-   * 前台用户登录
-   * 表单提交
+   * Foreground user login
+   * Form submission
    */
   @PostMapping("/userlogin.f")
   public String fFrontUserLogin(HttpServletRequest request, Model model, @Valid UserLoginForm loginForm, BindingResult bindingResult) throws Exception {
@@ -46,13 +46,13 @@ public class UserController extends BaseController {
       mUserService.joinSession(request, user);
       return "redirect:/";
     }
-    addModelAtt(model, VIEW_MSG, "用户名或密码错误");
+    addModelAtt(model, VIEW_MSG, "User name or password error");
     return "userlogin";
   }
 
   /**
-   * 前台用户注册
-   * 表单提交
+   * Foreground user registration
+   * Form submission
    */
   @PostMapping("/userregister.f")
   public String fFrontUserRegister(@Valid UserRegisterForm registerForm, BindingResult bindingResult, HttpServletRequest request, Model model, User user) {
@@ -60,16 +60,16 @@ public class UserController extends BaseController {
       List<ObjectError> errors = bindingResult.getAllErrors();
       return "redirect:/userregister";
     }
-    //再次进行重名校验
+    // verification of duplicate names again
     if (mUserService.registerUsernameCheckExist(registerForm)) {
       return "redirect:/userregister";
     }
-    //再次进行密码一致校验
+    //Password consistent check again
     if (!(registerForm.getPassword().equals(registerForm.getConfirmpassword()))) {
       return "redirect:/userregister";
     }
     mUserService.insertUser(user);
-    //跳转登录
+    // Jump login
     return "redirect:/userlogin";
   }
 

@@ -19,9 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 后台博客服务实现类
+ * Background blog service implementation class
  *
- * @author James
+ * @author raviteja
  */
 @Service
 public class AdminBlogServiceImpl implements IAdminBlogService {
@@ -39,10 +39,10 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
     article.setMdMaterial(form.getMdMaterial());
     article.setHtmlMaterial(form.getHtmlMaterial());
     article.setIntroduction(form.getDescription());
-    // 处理 article
+    // Processing article
     mArticleMapper.insertSelective(article);
     Integer articleId = article.getId();
-    // 处理 tags
+    // Processing tags
     String[] tags = form.getRawTags().split(",");
     for (String item : tags) {
       Tag expected = mTagMapper.selectTagByName(item);
@@ -101,7 +101,7 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
     article.setHtmlMaterial(form.getHtmlMaterial());
     article.setMdMaterial(form.getMdMaterial());
     article.setTitle(form.getTitle());
-    // 更新数据库中的信息
+    // Updating information in the database
     mArticleMapper.updateByPrimaryKeySelective(article);
   }
 }

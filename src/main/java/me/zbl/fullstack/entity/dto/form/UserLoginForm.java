@@ -7,9 +7,9 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * 用户登录表单
+ * User login form
  *
- * @author James
+ * @author raviteja
  */
 @Getter
 @Setter
@@ -18,19 +18,19 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class UserLoginForm {
 
   /**
-   * 用户名
+   * username
    */
-  @NotEmpty(message = "用户名不能为空")
+  @NotEmpty(message = "username cannot be empty")
   private String username;
 
   /**
-   * 密码
+   * password
    */
-  @NotEmpty(message = "密码不能为空")
+  @NotEmpty(message = "password cannot be empty")
   private String password;
 
   /**
-   * 记住登录
+   * Remember to log in
    */
   private String rememberme;
 }

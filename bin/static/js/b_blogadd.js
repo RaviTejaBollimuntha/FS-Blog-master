@@ -1,5 +1,5 @@
-/* 博客发布 */
-// Markdown 编辑器
+/ * Blog post */
+// Markdown editor
 var testEditor;
 
 $(function () {
@@ -22,11 +22,11 @@ $(function () {
      */
 
     $("#id_btn_blog_submit").bind("click", function () {
-        /* markdown 格式文本 */
+        / * markdown formatted text */
         $("#id_input_md").val(testEditor.getMarkdown());
-        /* html 格式内容 */
+        / * html format content */
         $("#id_input_html").val($(".markdown-body").prop('outerHTML'));
-        /* 展示文章描述填写的模态框 */
+        /* Show article Description fill in the modal box */
         showDetailModal();
     });
 
@@ -37,7 +37,7 @@ $(function () {
 });
 
 /**
- * 展示文章详情填写的模态框
+ * Show article details to fill in the modal box
  */
 function showDetailModal() {
     $('#id_modal_article_detail').modal({
@@ -46,20 +46,20 @@ function showDetailModal() {
 }
 
 /**
- * 将模态框中填写的内容保存到表单中
+ * Save the contents filled in the modal box to the form
  */
 function saveDetailText() {
-    // 内容描述
+    // Content description
     $('#id_input_article_description').val($('#id_input_article_description_in_modal').val());
     // Tags
     $('#id_input_article_tags').val($('#id_input_article_tags_in_modal').val());
 }
 
 /**
- * 提交文章表单
+ * Submit an article form
  */
 function submitBlogAddForm() {
-    // 提交表单
+    // Submit form
     var form = document.forms[0];
     form.action = "/admin/blogadd.f";
     form.method = "post";

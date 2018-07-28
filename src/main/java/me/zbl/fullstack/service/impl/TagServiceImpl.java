@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 文章标签相关业务实现类
+ * Article label related business implementation class
  *
- * @author James
+ * @author raviteja
  */
 @Service
 public class TagServiceImpl extends BaseViewTransableService<Tag, TagView> implements ITagService {

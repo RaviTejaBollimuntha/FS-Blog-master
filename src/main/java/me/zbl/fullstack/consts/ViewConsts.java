@@ -1,9 +1,9 @@
 package me.zbl.fullstack.consts;
 
 /**
- * 视图中用到的模型名常量
+ * Model name constants used in views
  *
- * @author James
+ * @author raviteja
  */
 public class ViewConsts {
 

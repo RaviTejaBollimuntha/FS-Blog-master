@@ -1,9 +1,9 @@
 package me.zbl.fullstack.entity.dto.response;
 
 /**
- * 简单 Json 响应类
+ * Simple Json response class
  *
- * @author James
+ * @author raviteja
  */
 public class SimpleResponse extends GlobalResponse {
 

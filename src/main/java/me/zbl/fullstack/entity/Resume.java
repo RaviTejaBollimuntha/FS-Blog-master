@@ -7,9 +7,9 @@ import javax.persistence.Id;
 import java.util.Date;
 
 /**
- * 简历类
+ * Resume category
  *
- * @author James
+ * @author raviteja
  */
 public class Resume {
 
@@ -31,19 +31,19 @@ public class Resume {
   private String introduction;
 
   /**
-   * 文章内容
+   * Article content
    */
   @Column(name = "md_material")
   private String mdMaterial;
 
   /**
-   * html 文章内容
+   * html article content
    */
   @Column(name = "html_material")
   private String htmlMaterial;
 
   /**
-   * 获取PrimaryKey
+   * Getting PrimaryKey
    *
    * @return id - PrimaryKey
    */
@@ -52,7 +52,7 @@ public class Resume {
   }
 
   /**
-   * 设置PrimaryKey
+   * Setting up PrimaryKey
    *
    * @param id PrimaryKey
    */

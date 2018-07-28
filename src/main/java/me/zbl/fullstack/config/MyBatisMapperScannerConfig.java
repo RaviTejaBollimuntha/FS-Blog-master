@@ -10,11 +10,11 @@ import org.springframework.context.annotation.Configuration;
 import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 
 /**
- * MyBatis扫描接口，使用的tk.mybatis.spring.mapper.MapperScannerConfigurer
- * 如果你不使用通用Mapper，可以改为org.xxx...
- * 由于MapperScannerConfigurer执行的比较早，所以必须有下面的注解 @AutoConfigureAfter
+* MyBatis scan interface, using the tk.mybatis.spring.mapper.MapperScannerConfigurer
+ * If you don't use generic Mapper, you can change it to org.xxx...
+ * Since the MapperScannerConfigurer is executed earlier, you must have the following annotation @Autoconfigureaafter
  *
- * @author James
+ * @author raviteja
  */
 @Configuration
 @AutoConfigureAfter(MybatisAutoConfiguration.class)
@@ -26,7 +26,7 @@ public class MyBatisMapperScannerConfig {
     mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
     mapperScannerConfigurer.setBasePackage("me.zbl.fullstack.mapper");
     Properties properties = new Properties();
-    // 这里要特别注意，不要把MyMapper放到 basePackage 中，也就是不能同其他Mapper一样被扫描到。
+    // Here to pay special attention to, do not put mymapper in basePackage, that is not the same as other Mapper to be scanned.
     properties.setProperty("mappers", IMyMapper.class.getName());
     properties.setProperty("notEmpty", "false");
     properties.setProperty("IDENTITY", "MYSQL");

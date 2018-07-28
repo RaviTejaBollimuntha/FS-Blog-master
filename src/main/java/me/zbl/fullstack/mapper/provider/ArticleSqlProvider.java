@@ -4,9 +4,9 @@ import me.zbl.fullstack.entity.dto.form.ArticleSearchForm;
 import org.apache.ibatis.jdbc.SQL;
 
 /**
- * Article 动态 SQL 提供者
+ * Article Dynamic SQL providers
  *
- * @author James
+ * @author raviteja
  */
 public class ArticleSqlProvider {
 

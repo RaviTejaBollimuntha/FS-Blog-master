@@ -4,9 +4,9 @@ import java.util.Date;
 import javax.persistence.*;
 
 /**
- * 文章类
+ * Article categories
  *
- * @author James
+ * @author raviteja
  */
 public class Article {
 
@@ -28,19 +28,19 @@ public class Article {
   private String introduction;
 
   /**
-   * 文章内容
+   * Article content
    */
   @Column(name = "md_material")
   private String mdMaterial;
 
   /**
-   * html 文章内容
+   * html Article content
    */
   @Column(name = "html_material")
   private String htmlMaterial;
 
   /**
-   * 获取PrimaryKey
+   * getting PrimaryKey
    *
    * @return id - PrimaryKey
    */
@@ -49,7 +49,7 @@ public class Article {
   }
 
   /**
-   * 设置PrimaryKey
+   * setting PrimaryKey
    *
    * @param id PrimaryKey
    */
@@ -114,19 +114,20 @@ public class Article {
   }
 
   /**
-   * 获取文章内容
+   * Get article content
    *
-   * @return md_material - 文章内容
+   * @return md_material-article content
    */
   public String getMdMaterial() {
     return mdMaterial;
   }
 
   /**
-   * 设置文章内容
+   * Set up article content
    *
-   * @param mdMaterial 文章内容
+   * @param mdMaterial article content
    */
+
   public void setMdMaterial(String mdMaterial) {
     this.mdMaterial = mdMaterial == null ? null : mdMaterial.trim();
   }

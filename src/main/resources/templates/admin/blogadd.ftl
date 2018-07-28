@@ -107,7 +107,7 @@
                     <textarea type="text" class="form-control" id="id_input_article_description_in_modal" placeholder="Description"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="id_input_article_tags_in_modal">Add tags to articles (separated by commas）</label>
+                    <label for="id_input_article_tags_in_modal">Add tags to articles (separated by commas)</label>
                     <input type="text" class="form-control" id="id_input_article_tags_in_modal" placeholder="Tags">
                 </div>
             <#-- e Modal content-->

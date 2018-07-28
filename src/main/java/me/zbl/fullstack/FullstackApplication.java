@@ -228,25 +228,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
                        `=---='
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-               佛祖保佑         永无BUG
+               Buddha bless the BUG
 */
 
-/**
- * Full-Stack Blog
- * FS-Blog
- * 全栈博客
- * <p>
- * 本项目受 Apache 开源协议 2.0 保护
- * 本项目由 JamesZBL 个人完成
- *
- * @author JamesZBL 郑保乐
- * @QQ 1146556298
- * @nickName 摆码王子
- * @E-mail zhengbaole_1996@163.com
- * @Github http://github.com/JamesZBL
- * @CSDN_Blog http://blog.csdn.net/zbl1146556298
- * @date 2017-10-18
- */
+
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableCaching

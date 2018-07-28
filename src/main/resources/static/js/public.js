@@ -4,7 +4,7 @@
 }();
 
 /**
- * 向指定 url 发送 get 请求
+ * Send a get request to a specified url
  * @param href
  */
 function c_location(href) {
@@ -13,30 +13,30 @@ function c_location(href) {
 
 
 /**
- * Layer 确认框
- * 点击 “确认” 后执行回调函数，点击 “取消” 不做任何操作
+ * Layer confirmation box
+ * Click "Confirm" to perform the callback function, click " Cancel” to do nothing
  *
- * @param msg 确认消息
- * @param callback 回调函数
+ * @param msg confirmation message
+ * @param callback function
  */
 function c_confirm(msg, callback) {
-    layer.confirm(msg, {icon: 3, title: '提示'}, function (index) {
+    layer.confirm(msg, {icon: 3, title: 'Alert'}, function (index) {
         callback();
         layer.close(index);
     });
 }
 
 /**
- * 弹出提示消息遮罩层
+ * Popup message mask layer
  *
- * @param msg 消息内容
+ * @param msg message content
  */
 function msg(msg) {
     layer.msg(msg);
 }
 
 /**
- * 时间戳转日期字符串
+ * Time stamp to date string
  */
 function formatDateTime(val, row, index) {
     var date = new Date(val);
@@ -55,8 +55,8 @@ function formatDateTime(val, row, index) {
 }
 
 /**
- * 截取指定长度的字符串
- * 在末尾添加 “...”
+ * Intercept a string of the specified length
+ * Add at the end “...”
  */
 function formatStrLength(val, row, index) {
     val = val.substring(0,20);

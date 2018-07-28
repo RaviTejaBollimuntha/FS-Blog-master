@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.SelectProvider;
 import java.util.List;
 
 /**
- * @author James
+ * @author raviteja
  */
 public interface ArticleMapper extends IMyMapper<Article> {
 
@@ -26,11 +26,11 @@ public interface ArticleMapper extends IMyMapper<Article> {
   List<Article> getPostViewAllArticles();
 
   /**
-   * 通过 tag id 查找文章
+   * Find articles by tag id
    *
    * @param id tag id
    *
-   * @return 符合条件的文章
+   * @return eligible articles
    */
   @Select({
                   "SELECT",
@@ -44,11 +44,11 @@ public interface ArticleMapper extends IMyMapper<Article> {
   List<Article> getArticleListByTagId(Integer id);
 
   /**
-   * 通过条件查找文章
+   * Find articles by criteria
    *
-   * @param form 条件表单
+   * @param form condition form
    *
-   * @return 符合条件的文章
+   * @return eligible articles
    */
   @SelectProvider(type = ArticleSqlProvider.class, method = "getArticleByCondition")
   List<Article> getArticleListByCondition(ArticleSearchForm form);

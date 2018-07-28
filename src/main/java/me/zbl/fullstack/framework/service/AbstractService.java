@@ -10,11 +10,11 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 /**
- * Service 层的基础接口
+ * Service Layer the underlying interface.
  *
  * @param <T>
  *
- * @author James
+ * @author raviteja
  */
 
 public abstract class AbstractService<T> implements IService<T> {
@@ -23,7 +23,7 @@ public abstract class AbstractService<T> implements IService<T> {
   protected IMyMapper<T> mapper;
 
   /**
-   * 泛型 T 的类型
+   * Types of generic T
    */
   private Class<T> modelClass;
 
@@ -76,7 +76,7 @@ public abstract class AbstractService<T> implements IService<T> {
       field.set(model, value);
       return mapper.selectOne(model);
     } catch (ReflectiveOperationException e) {
-      // TODO: 17-10-29 更换为一个自定义异常
+      // TODO: 17-10-29 Replace with a custom exception
       throw new RuntimeException(e.getMessage(), e);
     }
   }

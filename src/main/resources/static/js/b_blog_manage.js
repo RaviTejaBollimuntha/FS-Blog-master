@@ -1,14 +1,14 @@
-/* 博客管理 */
+/ * Blog management */
 $(function () {
-    //1.初始化Table
+    //1.Initialize Table
     var oTable = new TableInit();
     oTable.Init();
 
-    //2.初始化Button的点击事件
+    //2.Initialize button's Click event
     var oButtonInit = new ButtonInit();
     oButtonInit.Init();
 
-    //3.初始化表格事件
+    //3.Initialize table events
     var oEventInit = new EventInit();
     oEventInit.Init();
 });
@@ -16,59 +16,59 @@ $(function () {
 
 var TableInit = function () {
     var oTableInit = new Object();
-    //初始化Table
+    // Initialize Table
     oTableInit.Init = function () {
-        // 加载博客列表
+        // Load blog list
         $('#id_table_blog').bootstrapTable({
-            url: '/admin/blog_list.j',          //请求后台的URL（*）
-            method: 'get',                      //请求方式（*）
-            toolbar: '#toolbar',                //工具按钮用哪个容器
-            striped: true,                      //是否显示行间隔色
-            cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
-            pagination: true,                   //是否显示分页（*）
-            sortable: true,                     //是否启用排序
-            sortOrder: "asc",                   //排序方式
-            sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*）
-            pageNumber: 1,                      //初始化加载第一页，默认第一页
-            pageSize: 50,                       //每页的记录行数（*）
-            pageList: [10, 25, 50, 100, 200, 500],  //可供选择的每页的行数（*）
-            search: true,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端
-            strictSearch: false,                //是否进行完全匹配
-            showColumns: true,                  //是否显示所有的列
-            showRefresh: true,                  //是否显示刷新按钮
-            minimumCountColumns: 2,             //最少允许的列数
-            clickToSelect: true,                //是否启用点击选中行
-            height: 650,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-            uniqueId: "id",                     //每一行的唯一标识，一般为主键列
-            showToggle: true,                   //是否显示详细视图和列表视图的切换按钮
-            cardView: false,                    //是否显示详细视图
-            detailView: false,                  //是否显示父子表
+            url: '/admin/blog_list.j',          // Request the URL of the background（*）
+            method: 'get',                      //request method（*）
+            toolbar: '#toolbar',                // which container to use for the toolbutton
+            striped: true,                      //whether to display the color of the line interval
+            cache: false,                       //whether to use the cache, the default is true,so in general need to set this property（*）
+            pagination: true,                   //whether to display pagination（*）
+            sortable: true,                     // whether to enable sorting
+            sortOrder: "asc",                   //Sort by
+            sidePagination: "client",           // paging method: client client paging, server server paging（*）
+            pageNumber: 1,                      // initialize load first page, default first page
+            pageSize: 50,                       // number of rows per page（*）
+            pageList: [10, 25, 50, 100, 200, 500],  // The number of rows per page to choose from（*）
+            search: true,                       // whether to display the table search, this search is a client-side Search, will not enter the server
+            strictSearch: false,                //whether to make an exact match
+            showColumns: true,                  //does show all columns
+            showRefresh: true,                  //whether to display the Refresh button
+            minimumCountColumns: 2,             //minimum allowed columns
+            clickToSelect: true,                // whether to enable click on the selected row
+            height: 650,                        /// line height, if the height attribute is not set, the table automatically according to the number of records that form height
+            uniqueId: "id",                     // uniquely identifies each row, usually the primary key column
+            showToggle: true,                   //whether to display the toggle button for detailed view and list view
+            cardView: false,                    //whether to show the detail view
+            detailView: false,                  //whether to display the parent-child table
             showHeader: true,
             columns: [{
                 checkbox: true
             }, {
                 field: 'id',
-                title: '序号',
+                title: 'Serial number',
                 align: 'center',
                 sortable: true
             }, {
                 field: 'title',
-                title: '标题',
+                title: 'Title',
                 align: 'center'
             }, {
                 field: 'introduction',
-                title: '内容简介',
+                title: 'Introduction',
                 formatter: formatStrLength,
                 align: 'center'
             }, {
                 field: 'gmtCreate',
-                title: '发布时间',
+                title: 'Release time',
                 align: 'center',
                 formatter: formatDateTime,
                 sortable: true
             }, {
                 field: 'gmtModified',
-                title: '最后编辑时间',
+                title: 'Last edit time',
                 align: 'center',
                 formatter: formatDateTime,
                 sortable: true
@@ -76,13 +76,13 @@ var TableInit = function () {
         });
     };
 
-    //得到查询的参数
+    // get query parameters
     oTableInit.queryParams = function (params) {
         var temp = {
-            //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
-            // limit: params.limit,   //页面大小
-            // offset: params.offset,  //页码
-            // title: $("#txt_search_departmentname").val(),
+            // The name of the key and the variable name of the controller must have been here, change, the controller also need to change the same
+            // limit: params.limit, / / page size
+            // offset: params.offset, / / page number
+            // title: $("#txt_search_departmentname").val.(),
         };
         return temp;
     };
@@ -91,31 +91,31 @@ var TableInit = function () {
 };
 
 /**
- * 重新加载表格
+ * Reload table
  */
 function flushTable() {
     $('#id_table_blog').bootstrapTable('refresh');
 }
 
 /**
- * 按钮点击事件
+ * Button Click event
  */
 var ButtonInit = function () {
     var oInit = new Object();
     var postdata = {};
 
     oInit.Init = function () {
-        //初始化页面上面的按钮事件
+        // Initialize the button event above the page
         $('#id_btn_delete').on('click', function () {
-            c_confirm("确实要删除选中的所有文章吗？删除后不可恢复！", deleteArticleInBulk);
+            c_confirm("Do you want to delete all selected articles?After the deletion can not be restored!", deleteArticleInBulk);
         });
 
         $('#id_btn_add').on('click', function () {
-            c_confirm("即将跳转到博客发布页面，确定继续吗？", addBlog);
+            c_confirm("Will you jump to the blog post page and be sure to continue", addBlog);
         });
 
         $('#id_btn_edit').on('click', function () {
-            c_confirm("即将跳转到博客编辑页面，确定继续吗？", modifyBlog);
+            c_confirm("Going to jump to the blog Edit Page, OK to continue?", modifyBlog);
         });
     };
 
@@ -123,7 +123,7 @@ var ButtonInit = function () {
 };
 
 /**
- * 表格事件
+ * Form events
  */
 var EventInit = function () {
     var oInit = new Object();
@@ -139,13 +139,13 @@ var EventInit = function () {
 };
 
 /**
- * 批量删除
+ * Bulk delete
  */
 function deleteArticleInBulk() {
     idsArr = [];
     dataSel = $('#id_table_blog').bootstrapTable('getSelections');
     if(dataSel.length<1){
-        msg("至少得选一行吧");
+        msg("At least choose a line.");
     }
     for (i = 0; i < dataSel.length; i++) {
         var tmp = dataSel[i];
@@ -156,40 +156,40 @@ function deleteArticleInBulk() {
     var dataObj = new Object();
     dataObj.ids = idsArr;
 
-    // 注意：必须加 contentType: 'application/json'，否则 controller 中无法讲 json 直接转换成对象
+    // Note: contentType: 'application/json'must be added, otherwise JSON cannot be translated directly into object in controller
     $.ajax({
         type: "DELETE",
         url: "/admin/blog_delete.j",
         contentType: 'application/json',
         data: JSON.stringify(dataObj),
         success: function (result) {
-            msg("完成删除，刚才的文章永远的离你而去了");
+            msg("Complete the removal, just the article forever away from you");
             flushTable();
         },
         error:function () {
-            msg("删除失败");
+            msg("Delete failed");
         }
     });
 }
 
 /**
- * 添加文章
+ * Add articles
  */
 function addBlog() {
     c_location("/admin/blogadd");
 }
 
 /**
- * 修改文章
+ * Modify articles
  */
 function modifyBlog() {
     dataSel = $('#id_table_blog').bootstrapTable('getSelections');
     if (dataSel.length < 1) {
-        msg("你还没告诉我要编辑哪一篇呢");
+        msg("You haven't told me which one to edit.");
         return;
     }
     if (dataSel.length > 1) {
-        msg("一篇还不够你改的吗？选多啦");
+        msg("Is that not enough for you?More options.");
     } else {
         id = dataSel[0].id;
         c_location("/admin/blogmodify/" + id);

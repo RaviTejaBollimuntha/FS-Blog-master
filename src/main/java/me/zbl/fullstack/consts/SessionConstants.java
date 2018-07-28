@@ -1,9 +1,9 @@
 package me.zbl.fullstack.consts;
 
 /**
- * 关于 Sesion 的全局常量
+ * About Sesion's global constants
  *
- * @author James
+ * @author raviteja
  */
 public class SessionConstants {
 

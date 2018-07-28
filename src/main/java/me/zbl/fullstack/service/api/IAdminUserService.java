@@ -9,28 +9,28 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * 后台用户服务
+ * Background User Service
  *
- * @author James
+ * @ author raviteja
  */
 public interface IAdminUserService {
 
   /**
-   * 修改密码结果
+   * Change Password results
    */
   enum ModifyPwdResult {
     /**
-     * 两次密码不同
+     * Two different passwords
      */
-    NOT_EQUAL("两次输入的密码不相同"),
-    /**
-     * 原密码错误
+    NOT_EQUAL("Two different passwords."),
+   /**
+     * Original password error
      */
-    ORI_PWD_ERROR("原密码输入错误"),
-    /**
-     * 修改成功
+    ORI_PWD_ERROR("Original password input error"),
+   /**
+     * Modified successfully
      */
-    SUCCESS("修改成功");
+    SUCCESS("Modified successfully");
 
     String name;
 
@@ -40,50 +40,50 @@ public interface IAdminUserService {
   }
 
   /**
-   * 验证用户是否存在
+   * Verify that the user exists
    *
-   * @param form 用户信息
+   * @param form user information
    *
-   * @return 是否存在
+   * @return is present
    */
   AdminUser checkAdminUserExist(UserLoginForm form);
 
-  /**
-   * 将用户信息加入会话
+ /**
+   * Add user information to the session
    *
-   * @param request 用户请求
-   * @param user    当前用户的信息
+   * @param request user request
+   * information for the current user of @param user
    */
   void joinSession(HttpServletRequest request, AdminUser user);
 
   /**
-   * 从会话中销毁用户信息
+   * Destroy user information from session
    *
-   * @param request 用户请求
+   * @param request user request
    */
   void destroySession(HttpServletRequest request);
 
   /**
-   * 获取后台用户列表
+   * Get a list of background users
    *
-   * @return 后台用户 json
+   * @return background user json
    */
   List<AdminUser> getAdminUserJson();
 
   /**
-   * 批量删除用户
+   * Bulk delete users
    *
-   * @param model 待删除用户主键
+   * @param model user primary key to be deleted
    */
   void deleteAdminUser(TableKeyModel model);
 
   /**
-   * 后台用户密码修改
+   * Background User Password Change
    *
-   * @param form    修改密码表单
-   * @param request 请求，用于获取当前用户
+   * @param form to modify the Password Form
+   * @param request to get the current user
    *
-   * @return 修改结果
+   * @return modify result
    */
   ModifyPwdResult modifyUserPwd(AdminUserPwdModifyForm form, HttpServletRequest request);
 }

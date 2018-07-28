@@ -7,10 +7,10 @@ import me.zbl.fullstack.entity.Article;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * 修改博客表单
+ * Modify blog forms
  * <p>
  *
- * @author James
+ * @author ravireja
  * @date 17-12-4
  */
 @Setter

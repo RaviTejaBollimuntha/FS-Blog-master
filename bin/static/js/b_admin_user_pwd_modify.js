@@ -7,15 +7,15 @@ $(function () {
             data: $('#id_form').serialize(),
             success: function (result) {
                 if (!(result.hasError)) {
-                    msg("修改成功");
-                    // 返回博客批量管理页
+                    msg("Modified successfully");
+                    // Return to blog batch Management page
                     c_location("/admin/blogmanage");
                 } else {
-                    msg("修改失败");
+                    msg("Modification failed");
                 }
             },
             error: function () {
-                msg("失败");
+                msg("Failed.");
             }
         });
     });

@@ -7,15 +7,15 @@ import org.springframework.stereotype.Component;
 import static me.zbl.fullstack.consts.StatusCode.*;
 
 /**
- * 通用 Json 工厂类
+ * Generic Json factory class
  *
- * @author James
+ * @author raviteja
  */
 @Component(value = "generalJsonFactory")
 public class GeneralJsonFactory implements JsonFactory {
 
   /**
-   * 通用正常响应
+   * Universal normal response
    */
   @Override
   public SimpleResponse createSimpleResponse() {
@@ -28,10 +28,10 @@ public class GeneralJsonFactory implements JsonFactory {
   }
 
   /**
-   * 带参数的统一响应
-   * param resultCode 状态码
+   * Uniform response with parameters
+   * param resultCode status code
    *
-   * @param hasError 是否需异常
+   * does @param hasError require exception
    */
   @Override
   public SimpleResponse createSimpleResponse(int resultCode, boolean hasError) {

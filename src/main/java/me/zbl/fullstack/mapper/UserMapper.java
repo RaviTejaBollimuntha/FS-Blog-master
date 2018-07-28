@@ -4,7 +4,7 @@ import me.zbl.fullstack.entity.User;
 import me.zbl.fullstack.framework.mapper.IMyMapper;
 
 /**
- * @author James
+ * @author raviteja
  */
 public interface UserMapper extends IMyMapper<User> {
 }

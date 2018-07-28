@@ -9,9 +9,9 @@ import java.util.Date;
 import javax.persistence.*;
 
 /**
- * 管理员用户类
+ * Administrator user class
  *
- * @author James
+ * @author raviteja
  */
 @Component
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
@@ -26,7 +26,7 @@ public class AdminUser {
   private Integer id;
 
   /**
-   * 用户名
+   * Username
    */
   private String username;
 
@@ -46,7 +46,7 @@ public class AdminUser {
   private String wecaht;
 
   /**
-   * 头像url
+   * Avatar url
    */
   private String avatar;
 
@@ -64,7 +64,7 @@ public class AdminUser {
   private String mdInfo;
 
   /**
-   * 获取PrimaryKey
+   * getting PrimaryKey
    *
    * @return id - PrimaryKey
    */
@@ -73,7 +73,7 @@ public class AdminUser {
   }
 
   /**
-   * 设置PrimaryKey
+   * setting PrimaryKey
    *
    * @param id PrimaryKey
    */
@@ -82,18 +82,18 @@ public class AdminUser {
   }
 
   /**
-   * 获取用户名
+   * Get username
    *
-   * @return username - 用户名
+   * @return username-username
    */
   public String getUsername() {
     return username;
   }
 
   /**
-   * 设置用户名
+   * Set user name
    *
-   * @param username 用户名
+   * @param username
    */
   public void setUsername(String username) {
     this.username = username == null ? null : username.trim();
@@ -198,18 +198,18 @@ public class AdminUser {
   }
 
   /**
-   * 获取头像url
+   * Get avatar url
    *
-   * @return avatar - 头像url
+   * @return avatar-avatar url
    */
   public String getAvatar() {
     return avatar;
   }
 
   /**
-   * 设置头像url
+   * Set avatar url
    *
-   * @param avatar 头像url
+   * @param avatar URL
    */
   public void setAvatar(String avatar) {
     this.avatar = avatar == null ? null : avatar.trim();

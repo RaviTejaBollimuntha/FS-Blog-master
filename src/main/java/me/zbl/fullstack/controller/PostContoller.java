@@ -20,9 +20,9 @@ import java.util.List;
 import static me.zbl.fullstack.consts.ViewConsts.*;
 
 /**
- * 博客控制器
+ * Blog Controller
  *
- * @author James
+ * @author raviteja
  */
 @Controller
 public class PostContoller extends BaseController {
@@ -37,10 +37,10 @@ public class PostContoller extends BaseController {
   private IAdminBlogService mBlogService;
 
   /**
-   * 博客列表页
-   * 视图模型：
-   * 1.博客列表（文章标题/内容简介/发布时间）
-   * 2.标签（tagId/文章总数）
+   * Blog list page
+   * View model：
+   * 1.Blog list (article title/introduction/release time）
+   * 2.Tags (tagId / total number of articles）
    */
   @GetMapping("/post")
   public String pPostList(HttpServletRequest request, Model model, Integer tagId) throws Exception {
@@ -57,9 +57,9 @@ public class PostContoller extends BaseController {
   }
 
   /**
-   * 查看文章内容页
+   * View article content pages
    *
-   * @param id 文章 id
+   * @param id article id
    */
   @GetMapping("/blog/{id}")
   public String pFrontBlogView(HttpServletRequest request, Model model, @PathVariable Integer id) throws Exception {
@@ -71,12 +71,12 @@ public class PostContoller extends BaseController {
   }
 
   /**
-   * 文章搜索结果页
+   * Article Search Results page
    * <p>
-   * 根据指定条件查找文章
+   * Find articles based on specified criteria
    * <p>
-   * 视图模型：
-   * 博客列表（文章标题/内容简介/发布时间）
+   * View model：
+   * Blog list (article title/introduction/release time）
    */
   @GetMapping("/postsearch")
   public String pPostSearch(HttpServletRequest request, Model model, ArticleSearchForm form) throws Exception {

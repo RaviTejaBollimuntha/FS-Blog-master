@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 控制器基类
+ * Controller base class
  *
- * @author James
+ * @author raviteja
  */
 public class BaseController {
 
@@ -18,11 +18,11 @@ public class BaseController {
   protected GeneralJsonFactory mJsonFactory;
 
   /**
-   * Controller 中方法异常处理器
+   * Method exception handler in Controller
    *
-   * @param e 异常
+   * @param e exception
    *
-   * @return 视图名
+   * @return view name
    */
   @ExceptionHandler
   public String handleException(HttpServletRequest request, Exception e) {
@@ -30,21 +30,21 @@ public class BaseController {
   }
 
   /**
-   * 给页面添加标题
+   * Add title to the page
    */
   public void setPageTitle(Model model, String title) {
     model.addAttribute("title", title);
   }
 
   /**
-   * 根据名称获取 Session 中的属性值
+   * Get the property value in the Session based on the name
    */
   public Object getSessionAttr(HttpServletRequest request, String attrName) throws NullPointerException {
     return request.getSession().getAttribute(attrName);
   }
 
   /**
-   * 向 Model 添加数据
+   * Add data to Model
    */
   public void addModelAtt(Model model, String attribute, Object value) throws Exception {
     if (null != value) {
@@ -55,21 +55,21 @@ public class BaseController {
   }
 
   /**
-   * 向 Session 中添加对象
+   * Adding objects to a Session
    */
   public void addSessionAtrr(HttpServletRequest request, String attribute, Object value) {
     request.getSession().setAttribute(attribute, value);
   }
 
   /**
-   * 返回 成功 json
+   * Return successful json
    */
   public Object responseSimpleOK() {
     return mJsonFactory.createSimpleResponse();
   }
 
   /**
-   * 返回 失败 json
+   * Return failed json
    */
   public Object responseSimpleError() {
     return mJsonFactory.createtSimpleErrorResponse();

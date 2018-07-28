@@ -4,9 +4,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
- * Spring AOP 的配置
+ * Configuration of Spring AOP
  *
- * @author James
+ * @author raviteja
  */
 @Configuration
 @EnableAspectJAutoProxy(proxyTargetClass = true)

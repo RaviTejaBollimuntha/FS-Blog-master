@@ -7,9 +7,9 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * 查找文章表单
+ * Find article forms
  *
- * @author James
+ * @author ravviteja
  */
 @Getter
 @Setter
@@ -18,7 +18,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class ArticleSearchForm {
 
   /**
-   * 文章标题
+   * Article title
    */
   @NotEmpty
   private String name;

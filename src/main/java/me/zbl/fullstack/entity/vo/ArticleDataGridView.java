@@ -9,9 +9,9 @@ import me.zbl.fullstack.entity.Article;
 import java.util.Date;
 
 /**
- * 博客批量管理列表视图
+ * Blog batch management list view
  *
- * @author James
+ * @author raviteja
  */
 @Getter
 @Setter

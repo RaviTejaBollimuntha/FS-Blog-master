@@ -4,9 +4,9 @@ import me.zbl.fullstack.entity.Resume;
 import me.zbl.fullstack.framework.mapper.IMyMapper;
 
 /**
- * 简历
+ * Resume
  *
- * @author James
+ * @author raviteja
  */
 public interface ResumeMapper extends IMyMapper<Resume> {
 

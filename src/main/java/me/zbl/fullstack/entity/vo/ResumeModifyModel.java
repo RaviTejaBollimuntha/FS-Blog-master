@@ -8,10 +8,10 @@ import me.zbl.fullstack.entity.Resume;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * 简历修改表单
+ * Resume modification form
  * <p>
  *
- * @author James
+ * @author raviteja
  * @date 17-12-4
  */
 @Setter

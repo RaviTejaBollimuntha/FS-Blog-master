@@ -7,44 +7,44 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 博客服务接口
+ * Blog service interface
  *
- * @author James
+ * @author ravi teja
  */
 public interface IPostsService {
 
   /**
-   * 获取所有博客
+   * Get all blogs
    *
-   * @return 博客视图实体集合
+   * @return blog view entity collection
    */
   List<PostView> getPostList();
 
   /**
-   * 根据日期条件获取博客
+   * Get a blog based on date conditions
    *
-   * @param start 起始时间
-   * @param end   结束时间
+   * @param start time
+   * @param end time
    *
-   * @return 博客视图集合
+   * @return blog view collection
    */
   List<PostView> getPostListByDate(Date start, Date end);
 
   /**
-   * 根据 Tag ID 查找文章
+   * Find articles based on Tag ID
    *
    * @param tagId tag ID
    *
-   * @return 文章
+   * @return article
    */
   List<PostView> getPostListByTagId(Integer tagId);
 
   /**
-   * 根据 具体条件筛选文章
+   * Filter articles based on specific criteria
    *
-   * @param form 条件表单
+   * @param form condition form
    *
-   * @return 文章
+   * @return article
    */
   List<PostView> getPostListByArticleCondition(ArticleSearchForm form);
 }

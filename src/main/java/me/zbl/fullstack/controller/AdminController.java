@@ -26,9 +26,9 @@ import javax.validation.Valid;
 import static me.zbl.fullstack.consts.ViewConsts.*;
 
 /**
- * 后台控制器
+ * AdminController
  *
- * @author James
+ * @author raviteja
  */
 @Controller
 @RequestMapping("/admin")
@@ -42,7 +42,7 @@ public class AdminController extends BaseController {
   IResumeService mResumeService;
 
   /**
-   * 后台首页
+   * Backstage home page
    */
   @GetMapping("")
   public String pAdminIndex(HttpServletRequest request, Model model) {
@@ -50,7 +50,7 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 后台首页
+   * Backstage home page
    */
   @GetMapping("/index")
   public String pAdminIndex2(HttpServletRequest request, Model model) {
@@ -58,7 +58,7 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 后台用户登录页面
+   * Background user login page
    */
   @GetMapping("/login")
   public String pAdminLogin(HttpServletRequest request, Model model) {
@@ -66,7 +66,7 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 写博客页面
+   * Blog page
    */
   @GetMapping("/blogadd")
   public String pAdminBlogAdd(HttpServletRequest request, Model model) {
@@ -74,7 +74,7 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 编辑博客页面
+   * Edit the blog page
    */
   @GetMapping("/blogmodify/{id}")
   public String pAdminBlogModify(HttpServletRequest request, Model model, @PathVariable Integer id) throws Exception {
@@ -85,7 +85,7 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 博客管理页面
+   * Blog Management page
    */
   @GetMapping("/blogmanage")
   public String pAdminBlogManage(HttpServletRequest request, Model model) {
@@ -93,7 +93,7 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 后台用户登录验证
+   * Background user login verification
    */
   @PostMapping("/login.f")
   public String fAdminLogin(UserLoginForm userLoginForm) {
@@ -101,28 +101,28 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 发布文章
+   * Publish articles
    */
   @PostMapping("/blogadd.f")
   public String fAdminBlogAdd(BlogAddForm blogAddForm) {
-    // TODO: 17-12-4 返回 json ，成功则重定向到博客列表
+    // TODO: 17-12-4 returns json and redirects to blog list if successful
     mBlogService.blogAdd(blogAddForm);
     return "redirect:/admin/index";
   }
 
   /**
-   * 修改文章
+   * Modify articles
    */
   @PostMapping("blog_modify.f")
   public String fAdminBlogModify(BlogModifyForm modifyForm) {
-    // TODO: 17-12-4 返回 json ，成功则重定向到博客列表
+    // TODO: 17-12-4 returns json and redirects to blog list if successful
     mBlogService.blogModify(modifyForm);
     return "redirect:/admin/index";
   }
 
 
   /**
-   * 获取博客详情列表
+   * Get a list of blog details
    */
   @GetMapping("/blog_list.j")
   @ResponseBody
@@ -131,7 +131,7 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 批量删除博客
+   * Bulk delete blog
    */
   @DeleteMapping("/blog_delete.j")
   @ResponseBody
@@ -141,7 +141,7 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 后台用户管理页面
+   * Background User Management page
    */
   @GetMapping("/admin_user_manage")
   public String pAdminUserManage() {
@@ -149,7 +149,7 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 后台用户管理 json
+   * Background user management json
    */
   @GetMapping("/admin_user.j")
   @ResponseBody
@@ -158,7 +158,7 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 后台用户批量删除
+   * Background user bulk delete
    */
   @DeleteMapping("/admin_use_delete.j")
   @ResponseBody
@@ -168,7 +168,7 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 后台用户密码修改页面
+   * Background User Password Change page
    */
   @GetMapping("/admin_user_pwd_modify")
   public String pAdminUserPwdModify() {
@@ -176,7 +176,7 @@ public class AdminController extends BaseController {
   }
 
   /**
-   * 后台用户密码修改
+   * Background User Password Change
    */
   @PostMapping("/admin_user_pwd_modify.f")
   @ResponseBody

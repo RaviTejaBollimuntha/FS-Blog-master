@@ -9,9 +9,9 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * 后台用户密码修改
+ * Background user password modification
  *
- * @author James
+ * @author raviteja
  * @date 18-1-25
  */
 @Getter

@@ -9,9 +9,9 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * 用户注册表单
+ * User registration form
  *
- * @author James
+ * @author raviteja
  */
 @Getter
 @Setter
@@ -20,23 +20,23 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class UserRegisterForm {
 
   /**
-   * 用户名
+   * Username
    */
   @Length(max = DataConsts.USERNAME_MAX_LENGTH)
-  @NotEmpty(message = "用户名不能为空")
+  @NotEmpty(message = "Username cannot be empty")
   private String username;
 
   /**
-   * 密码
+   * Password
    */
   @Length(max = DataConsts.PASSWORD_MAX_LENGTH)
-  @NotEmpty(message = "密码不能为空")
+  @NotEmpty(message = "The password cannot be empty")
   private String password;
 
   /**
-   * 确认密码
+   * Confirm password
    */
   @Length(max = DataConsts.PASSWORD_MAX_LENGTH)
-  @NotEmpty(message = "请再次确认密码")
+  @NotEmpty(message = "Please confirm the password again.")
   private String confirmpassword;
 }

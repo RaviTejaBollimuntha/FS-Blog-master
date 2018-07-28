@@ -8,9 +8,9 @@ import lombok.ToString;
 import java.util.List;
 
 /**
- * 批量操作对主键的封装
+ * Bulk operation on the primary key package.
  *
- * @author James
+ * @author raviteja
  */
 @Getter
 @Setter

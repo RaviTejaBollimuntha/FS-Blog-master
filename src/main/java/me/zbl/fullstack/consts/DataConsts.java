@@ -1,9 +1,9 @@
 package me.zbl.fullstack.consts;
 
 /**
- * 关于数据的常量类
+ * About data constant classes
  *
- * @author James
+ * @author raviteja
  */
 public class DataConsts {
 

@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 用户权限验证的拦截器
+ * User permission verification interceptor
  *
- * @author James
+ * @author raviteja
  */
 @Component
 public class UserAuthenticationInterceptor implements HandlerInterceptor {

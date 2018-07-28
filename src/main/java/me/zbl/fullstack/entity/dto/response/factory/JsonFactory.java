@@ -5,42 +5,42 @@ import me.zbl.fullstack.entity.dto.response.SimpleResponse;
 
 
 /**
- * Json 实体工厂类接口
+ * Json entity factory class interface
  *
- * @author James
+ * @author raviteja
  */
 public interface JsonFactory {
 
   /**
-   * 获取简单响应实体
+   * Get a simple response entity
    *
-   * @return 响应实体
+   * @return response entity
    */
   SimpleResponse createSimpleResponse();
 
   /**
-   * 获取简单错误实体
+   * Get simple error entities
    *
-   * @return 响应实体
+   * @return response entity
    */
   SimpleResponse createtSimpleErrorResponse();
 
   /**
-   * 获取简单响应实体
+   * Get a simple response entity
    *
-   * @param resultCode 结果状态码
-   * @param hasError   是否含有错误
+   * @param resultCode result status code
+   * does @param hasError contain errors
    *
-   * @return 响应实体
+   * @return response entity
    */
   SimpleResponse createSimpleResponse(int resultCode, boolean hasError);
 
   /**
-   * 获取重定向响应实体
+   * Get the redirect response entity
    *
-   * @param resultCode  结果状态码
-   * @param hasError    是否含有错误
-   * @param redirectURL 重定向 url
+   * @param resultCode result status code
+   * does @param hasError contain errors
+   * @param redirectURL redirect url
    *
    * @return
    */

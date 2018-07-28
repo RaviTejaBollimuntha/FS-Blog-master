@@ -1,6 +1,6 @@
 /**
- * 自定义注解
+ * Custom annotations
  * <p>
- * Created by James on 17-12-3.
+ * Created by raviteja on 17-12-3.
  */
 package me.zbl.fullstack.annotation;

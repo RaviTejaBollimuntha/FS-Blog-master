@@ -7,9 +7,9 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * 修改简历表单
+ * Modify resume form
  *
- * @author James
+ * @author raviteja
  */
 @Setter
 @Getter
@@ -18,31 +18,31 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class ResumeModifyForm {
 
   /**
-   * 所修改博客的 id
+   * ID of the modified blog
    */
   @NotEmpty
   private Integer id;
 
   /**
-   * 文章标题
+   * Article title
    */
   @NotEmpty
   private String title;
   /**
-   * markdown 内容
+   * markdown content
    */
   private String mdMaterial;
   /**
-   * markdown 转 html 后的内容
+   * markdown to html content
    */
   private String htmlMaterial;
   /**
-   * 文章内容描述
+   * Article Description
    */
   private String description;
 
   /**
-   * 原始 tags
+   * Original tags
    */
   private String rawTags;
 }
