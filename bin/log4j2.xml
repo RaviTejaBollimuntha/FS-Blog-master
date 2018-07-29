@@ -61,7 +61,7 @@
         </AsyncRoot>
 
         <!-- The business dao interface where the package to fill in, and can use the console output-->
-        <logger name="me.zbl.fullstack.mapper" level="DEBUG" additivity="false">
+        <logger name="com.fs.mapper" level="DEBUG" additivity="false">
             <appender-ref ref="console"/>
         </logger>
     </Loggers>
