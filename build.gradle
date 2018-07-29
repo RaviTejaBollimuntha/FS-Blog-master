@@ -23,7 +23,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        // Gradle-docker 插件
+        // Gradle-docker 
         classpath("se.transmode.gradle:gradle-docker:${gradleDockerVersion}")
     }
 }
@@ -34,7 +34,7 @@ apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'docker' // end::plugin[] // This is used as the docker image prefix (org) group = 'gregturn'
 
-group = 'me.zbl'
+group = 'com.fs'
 version = '2.3-Release'
 sourceCompatibility = 1.8
 
@@ -74,19 +74,19 @@ dependencies {
     //jdbc
     compile("org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}")
 
-    //模板引擎
+    
     compile("org.springframework.boot:spring-boot-starter-freemarker:${springBootVersion}")
 
-    //日志
+    
     compile("org.springframework.boot:spring-boot-starter-log4j2:${springBootVersion}")
 
-    //缓存
+    
     compile("net.sf.ehcache:ehcache:${ehcacheVersion}")
 
-    //数据库驱动
+    
     compile("mysql:mysql-connector-java:${mysqlConnectorVersion}")
 
-    //连接池
+    
     compile("com.zaxxer:HikariCP:${hikariCPVersion}")
 
     //ORM
@@ -94,7 +94,7 @@ dependencies {
 
     compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisStarterVersion}")
 
-    //lombok插件
+    //lombok
     compile("org.projectlombok:lombok:${lombokVersion}")
 
     //
@@ -109,16 +109,15 @@ dependencies {
     //mybatis-common-mapper-generator
     mybatisGenerator 'tk.mybatis:mapper:3.4.4'
 
-    //mybatis-mysql驱动
+    
     mybatisGenerator "mysql:mysql-connector-java:${mysqlConnectorVersion}"
 
-    //运行环境(采用 jar 部署的方式时需要)
+    
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
 
-    //测试
+   
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 
-    //热部署
     compile("org.springframework.boot:spring-boot-devtools:${springBootVersion}")
 
     //commons-io
