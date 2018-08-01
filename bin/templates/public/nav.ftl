@@ -16,7 +16,7 @@
         <#-- s Left side navigation -->
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link"><#-- 占位 --></a>
+                    <a class="nav-link"><#-- Placeholder --></a>
                 </li>
                 <li class="nav-item <#if page_index?? && page_index == 0>active</#if>">
                     <a class="nav-link" href="/">Home</a>
